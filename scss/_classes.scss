@@ -1,0 +1,125 @@
+/* utility classes */
+.last-p p:last-child {
+	margin: 0;
+}
+.flex {
+	display: flex;
+}
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+.force-new-row {
+	flex-basis: 100%;
+}
+.align-center {
+	display: flex;
+	align-items: center;
+}
+.align-start {
+	display: flex;
+	align-items: flex-start;
+}
+.fit-image {
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+.bg-image {
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.pos-abs {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.wrap-text {
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	word-break: break-all;
+	word-break: break-word;
+	hyphens: auto;
+}
+.nowrap {
+	white-space: nowrap;
+}
+.center-text {
+	text-align: center;
+}
+.lazy-img {
+	opacity: 0;
+	transform: translateY(-5rem) scale(0.5);
+	transition: $trans;
+}
+.unlazied {
+	opacity: 1;
+	transform: translateY(0) scale(1);
+}
+.resetBtn {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+.resetList {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.sr-only:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 0.0625rem;
+	overflow: hidden;
+	position: absolute;
+	white-space: nowrap;
+	width: 0.0625rem;
+}
+.visuallyhidden,
+.visually-hidden,
+.visuallyHidden,
+.sr-only {
+	position: absolute;
+	overflow: hidden;
+	clip: rect(0 0 0 0);
+	margin: -1px;
+	padding: 0;
+	border: 0;
+	width: 1px;
+	height: 1px;
+	transition: none;
+}
+.visuallyhidden.focusable:focus,
+.visually-hidden.focusable:focus,
+.visuallyHidden.focusable:focus,
+.sr-only.focusable:focus {
+	top: 0;
+	left: 0;
+	background: black;
+	color: white;
+	overflow: visible;
+	clip: auto;
+	margin: 0;
+	width: 100%;
+	height: auto;
+	border: 1px dashed white;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	font-weight: bold;
+	z-index: 9001;
+}
+/* utility classes */ 

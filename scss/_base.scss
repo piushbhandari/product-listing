@@ -1,0 +1,102 @@
+/* ================================================================
+Base styles
+================================================================ */
+
+.site-container {
+	position: relative;
+}
+
+/* Base Container Styles */
+
+.container {
+	width: 100%;
+	max-width: $container-size;
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: $grid-gutter;
+	padding-right: $grid-gutter;
+
+	@include breakpoint($bp-m) {
+		padding-left: $grid-gutter-tab;
+		padding-right: $grid-gutter-tab;
+	}
+	&.container--xsmall {
+		max-width: $container-size-xsmall;
+	}
+	&.container--small {
+		max-width: $container-size-small;
+	}
+
+	&.container--medium {
+		max-width: $container-size-medium;
+	}
+
+	&.container--large {
+		max-width: $container-size-large;
+	}
+
+	&.container--fluid {
+		max-width: none;
+		padding: 0;
+
+		// horizontal scroll issue fix for full-width sections
+		.section-container__row {
+			margin: 0;
+		}
+		.section-container__col {
+			padding: 0;
+		}
+	}
+
+	&.container--nested,
+	.container {
+		padding: 0;
+	}
+}
+
+.container-fluid {
+	margin-right: auto;
+	margin-left: auto;
+	padding-left: $grid-gutter-em;
+	padding-right: $grid-gutter-em;
+}
+
+// layout
+
+.body {
+	padding: 24px 0;
+
+	@include breakpoint($bp-m) {
+		padding: 40px 0;
+	}
+
+	@include breakpoint($bp-l) {
+		padding: 88px 0;
+	}
+}
+.main-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 32px;
+	@include breakpoint($bp-l) {
+		grid-template-columns: 800px 1fr;
+	}
+}
+
+.section-filters {
+	outline: 1px solid red;
+	@include breakpoint($bp-l) {
+		grid-column: 1 / -1;
+	}
+}
+
+.section-products {
+	outline: 1px solid black;
+}
+
+.section-cart { 
+	outline: 1px solid blue;
+    @include breakpoint($bp-l) {
+		grid-column: 2 / -1;
+	}
+}

@@ -1,1 +1,52 @@
-$font-family: "Red Hat Text", sans-serif;
+// Color Variables
+$color-primary: #C73B0F;
+$body-bg: #fff;
+$color-base: #260F08;
+$color-invert: #fff;
+$color-black: #000;
+$color-pink: #FCF8F6;
+$color-dark-pink: #87635A;
+
+// Typography
+$font-primary: "Red Hat Text", sans-serif;
+$font-secondary: MyriadPro, sans-serif;
+$font-heading: $font-primary;
+
+$fontWeight-light: 300;
+$fontWeight-normal: 400;
+$fontWeight-medium: 500;
+$fontWeight-semibold: 600;
+$fontWeight-bold: 700;
+
+// Global Border Radius
+$border-radius: 10px; 
+
+// Breakpoints 
+$bp-s: 20em; // 320px
+$bp-s-max: 29.938em; // 479px
+$bp-sw: 30em; // 480px
+$bp-sw-max: 47.938em; // 767px
+$bp-m-s: 37.5em; // 600px
+$bp-m: 48em; // 768px
+$bp-m-max: 59.938em; // 959px
+$bp-mw: 60em; // 960px
+$bp-mw-max: 71.188em; // 1139px 
+$bp-l: 75em; // 1200px
+$bp-l-max: 81.188em; // 1299px
+$bp-xl: 81.25em; // 1300px
+$bp-xxl: 1400px; // 1400px
+
+// Transitions
+$trans-duration: 0.3s;
+$trans-ease: ease-in;
+$trans: all $trans-duration $trans-ease;
+
+// Grid
+$container-size: 1263px; // 1215px + 48
+$container-size-xsmall: 62.5rem; // 960 + 40
+$container-size-small: 72.1875rem; // 1115px + 40
+$container-size-medium: 92.5rem; // 1440px + 40
+$container-size-large: 117.5rem; // 1880px
+$grid-gutter: 24px;
+$grid-gutter-tab: 40px;
+$grid-gutter-em: 1.25em; // Changing grid gutter to em causes a compiling error :/
