@@ -1,0 +1,136 @@
+.cart-summary {
+	background: $body-bg;
+	border-radius: 12px;
+	padding: 24px;
+	position: sticky;
+	top: 10px;
+}
+
+.cart-summary__title {
+	&,
+	span {
+		color: $color-primary;
+		margin-bottom: 24px;
+		font-size: 2.4rem;
+		line-height: normal;
+	}
+}
+
+.order-listing {
+	@include resetList;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-bottom: 24px;
+}
+
+.order-listing__item {
+	padding-bottom: 15px;
+	border-bottom: 1px solid $color-gray;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+
+	@include breakpoint($bp-m) {
+		padding-bottom: 23px;
+	}
+}
+
+.order-listing__left {
+}
+
+.order-listing__name {
+	margin-bottom: 8px;
+	font-weight: $fontWeight-semibold;
+	font-size: 1.4rem;
+	line-height: normal;
+}
+.order-listing__left-bottom {
+	display: flex;
+	gap: 8px;
+}
+
+.order-listing__quantity {
+	color: $color-primary;
+	margin-right: 8px;
+	margin-bottom: 0;
+	font-weight: $fontWeight-semibold;
+	font-size: 1.4rem;
+	line-height: normal;
+}
+
+.order-listing__og-price {
+	color: $color-dark-pink;
+	margin-bottom: 0;
+	font-size: 1.4rem;
+	line-height: normal;
+}
+.order-listing__new-price {
+	color: $color-dark-pink;
+	margin-bottom: 0;
+	font-size: 1.4rem;
+	line-height: normal;
+	font-weight: $fontWeight-semibold;
+}
+.order-listing__close {
+	@include resetBtn;
+	width: 19px;
+	height: 19px;
+	border-radius: 50%;
+	border: 1px solid $color-tan;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&:hover,
+	&:focus {
+		border-color: $color-primary;
+		.order-listing__close-icon {
+			fill: $color-primary;
+		}
+	}
+}
+.order-listing__close-icon {
+	fill: $color-tan;
+	width: 12px;
+	height: 12px;
+}
+
+.cart-summary__order-total {
+	margin-bottom: 24px;
+	display: flex;
+	gap: 10px;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.cart-summary__order-text {
+	margin: 0;
+	font-size: 1.4rem;
+	line-height: normal;
+}
+
+.cart-summary__total-price {
+	margin: 0;
+	font-size: 2.4rem;
+	line-height: normal;
+	font-weight: $fontWeight-bold;
+}
+
+.cart-summary__notice {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	text-align: center;
+	justify-content: center;
+	padding: 16px;
+	border-radius: 8px;
+	background-color: $color-pink;
+	margin-bottom: 24px;
+}
+.cart-summary__notice-text {
+	margin: 0;
+	font-size: 1.4rem;
+}
