@@ -31,7 +31,27 @@
                             <path d="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z"></path>
                             </svg>
                     </button>
-                    <div data-expander-target class="product-filters__content active" id="product-filters">
+                    <div data-expander-target class="product-filters__content" id="product-filters">
+                        <!-- 
+                                FILTHAS!!
+                                    - search text input 
+                                    - dropdown sort by
+                                        - sort by alphabetically
+                                            a-z
+                                            z-a
+                                        - sort by price
+                                            - highest to low
+                                            - lowest to high
+                                        - is featured
+                                    - dropdown for category (possibly use js to populate this?)
+                                        - creme bulee
+                                        - macaron
+                                        - etc
+                                    - dropdown
+                                    - price range input
+                                        - min price -> max price
+
+                               -->
                         <div class="product-filters-wrapper" data-input-container>
                             <label for="productSearch" class="sr-only">
                                 Search for products
@@ -47,14 +67,146 @@
                                 <path d="M12.999 22c-4.964 0-8.999-4.037-8.999-8.999 0-4.964 4.036-9.001 8.999-9.001s8.999 4.037 8.999 9.001c0 4.962-4.036 8.999-8.999 8.999zM23.483 20.656c1.575-2.151 2.516-4.793 2.516-7.655 0-7.168-5.831-13.001-12.999-13.001s-12.999 5.833-12.999 13.001c0 7.166 5.831 12.999 12.999 12.999 2.864 0 5.506-0.942 7.655-2.517l8.517 8.517 2.828-2.828c0 0-8.517-8.516-8.517-8.516z"></path>
                             </svg>
                         </div>
+                        
+                        <div class="product-filters-wrapper">
+                            <button type="button" data-expander-toggle="sortByFilter" class="product-filters-wrapper__dropdown-toggle">
+                                <span>Sort By:</span> 
+                                <svg class="product-filters-wrapper__dropdown-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                    <path d="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z"></path>
+                                    </svg>
+                            </button>
+                            <div class="product-filters-wrapper__dropdown-content" data-expander-target id="sortByFilter">
+                                <ul class="sortby-listing">
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            Featured items
+                                        </button>
+                                    </li>
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            A-Z
+                                        </button>
+                                    </li>
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            Z-A
+                                        </button>
+                                    </li>
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            Price: highest to lowest
+                                        </button>
+                                    </li>
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            Price: lowest to highest
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-filters-wrapper">
+                            <button type="button" data-expander-toggle="categorySort" class="product-filters-wrapper__dropdown-toggle">
+                                <span>Category</span> 
+                                <svg class="product-filters-wrapper__dropdown-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                    <path d="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z"></path>
+                                    </svg>
+                            </button>
+                            <div class="product-filters-wrapper__dropdown-content" data-expander-target id="categorySort">
+                                <ul class="sortby-listing">
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            Macaron
+                                        </button>
+                                    </li>
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            Baklava
+                                        </button>
+                                    </li>
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            Pie
+                                        </button>
+                                    </li>
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            Cake
+                                        </button>
+                                    </li>
+                                    <li class="sortby-listing__item">
+                                        <button class="sortby-listing__btn" type="button">
+                                            Brownie
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="product-filters-wrapper product-filters-wrapper--flex">
+                            <div class="product-filters-wrapper__container">
+                                <label for="minPriceRange" class="product-filters-wrapper__label">
+                                    Min price range
+                                </label>
+                                <input class="product-filters-wrapper__input product-filters-wrapper__input--num" type="number" name="minPriceRange" id="minPriceRange" min="1" value="1">
+                            </div>
+                            <svg class="" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                <path d="M1.656 32q0.563-0.063 1.094-0.531l12.656-14.594q0.813-0.938 0-1.906l-12.656-14.563q-0.938-0.813-1.938 0-0.813 0.938 0 1.938l11.844 13.719-11.844 13.75q-0.813 0.938 0 1.906 0.438 0.344 0.844 0.281zM15.125 32q0.75-0.063 1.094-0.531l12.656-14.594q0.813-0.938 0-1.906l-12.656-14.563q-0.969-0.813-1.938 0-0.813 0.938 0 1.938l11.844 13.719-11.844 13.75q-0.813 0.938 0 1.906 0.406 0.344 0.844 0.281z"></path>
+                                </svg>
+                            <div class="product-filters-wrapper__container"> 
+                                <label for="maxPriceRange" class="product-filters-wrapper__label">
+                                    Max price range
+                                </label>
+                                <input class="product-filters-wrapper__input product-filters-wrapper__input--num" type="number" name="maxPriceRange" id="maxPriceRange" min="1" value="20">
+                            </div>
+                        </div>
+                        <button type="button" class="button submit-search">Filter</button>
                     </div>
                 </div>
             </section>
             <section class="section-products" aria-labelledby="products">
                 <div class="product-card-box">
-                    <h2 class="product-card-box__title" id="products">
-                        Desserts
-                    </h2>
+                    <div class="title-box">
+                        <h2 class="product-card-box__title" id="products">
+                            Desserts
+                        </h2>
+                        <div class="data-expander-container">
+                            <button type="button" data-expander-toggle="itemsPerPage" class="data-expander-container__button">
+                                <span>Items per page:</span>
+                                <svg class="data-expander-container__button-icon" version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+                                    <path d="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z"></path>
+                                    </svg>
+                            </button>
+                            <div class="data-expander-container__target" data-expander-target id="itemsPerPage">
+                                <ul role="list">
+                                    <li>
+                                        <button type="button" class>
+                                            3
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class>
+                                            6
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class>
+                                            9
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class>
+                                           12
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button type="button" class>
+                                           err-THANG!
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <ul class="product-listing">
                         <li class="product-listing__item">
                             <div class="product-listing__imgbox">

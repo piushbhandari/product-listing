@@ -89,12 +89,10 @@ Base styles
 	}
 }
 
-.section-products {
-	outline: 1px solid black;
+.section-products { 
 }
 
-.section-cart { 
-	outline: 1px solid blue;
+.section-cart {  
     @include breakpoint($bp-l) {
 		grid-column: 2 / -1;
 	}

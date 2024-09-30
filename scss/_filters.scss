@@ -55,6 +55,16 @@
 
 .product-filters-wrapper {
 	position: relative;
+	margin-bottom: 10px;
+
+	&--flex {
+		display: flex;
+        align-items: center;
+		gap: 20px;
+	}
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 .product-filters-wrapper__input {
 	height: 40px;
@@ -63,9 +73,27 @@
 	border: none;
 	border-bottom: 1px solid $color-primary;
 	font-size: 1.6rem;
+
+	&--num {
+		padding: 20px;
+	}
+	&:hover,
+	&:focus {
+		border-color: $color-black;
+	}
 	&::placeholder {
 		opacity: 1;
 	}
+}
+.product-filters-wrapper__container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+.product-filters-wrapper__label {
+	font-size: 1.6rem;
+	font-weight: $fontWeight-semibold;
+	cursor: pointer;
 }
 
 .product-filters__clear {
@@ -75,11 +103,11 @@
 	transform: translateY(-50%);
 	width: 30px;
 	height: 100%;
-    display: none;
+	display: none;
 
-    &.active {
-        display: block;
-    }
+	&.active {
+		display: block;
+	}
 	&:hover,
 	&:focus {
 		.product-filters__clear-icon {
@@ -101,4 +129,76 @@
 	right: 20px;
 	top: 50%;
 	transform: translateY(-50%);
+}
+
+.product-filters-wrapper__dropdown-toggle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 20px;
+	width: 100%;
+	padding-bottom: 20px;
+	border-bottom: 1px solid $color-primary;
+	padding: 20px;
+	&.active {
+		.product-filters-wrapper__dropdown-icon {
+			transform: rotate(45deg);
+		}
+	}
+	&,
+	span {
+		font-size: 1.6rem;
+	}
+
+	&:hover,
+	&:focus {
+		border-color: $color-black;
+		.product-filters-wrapper__dropdown-icon {
+			fill: $color-black;
+		}
+	}
+}
+.product-filters-wrapper__dropdown-icon {
+	width: 20px;
+	height: 20px;
+	fill: $color-primary;
+}
+
+.product-filters-wrapper__dropdown-content {
+	border-radius: 8px;
+	background: $color-pink;
+	margin-top: 20px;
+	padding: 20px 30px;
+}
+
+.sortby-listing {
+	@include resetList;
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.sortby-listing__item {
+	&:last-child .sortby-listing__btn {
+		border-bottom: none;
+	}
+}
+
+.sortby-listing__btn {
+	font-size: 1.6rem;
+	padding-bottom: 15px;
+	border-bottom: 1px solid rgba($color-black, 0.5);
+	width: 100%;
+	text-align: left;
+	&:hover,
+	&:focus {
+		border-color: $color-primary;
+		color: $color-primary;
+	}
+}
+
+.submit-search {
+	display: flex;
+	min-width: 130px;
+	margin-left: auto;
 }

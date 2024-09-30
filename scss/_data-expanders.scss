@@ -1,7 +1,73 @@
-[data-expander-target]
-{
-    display: none;
-    &.active {
-        display: block;
-    }
+[data-expander-target] {
+	display: none;
+	&.active {
+		display: block;
+	}
+}
+
+// generic expanders
+
+.data-expander-container {
+	position: relative;
+	flex-shrink: 0;
+}
+
+.data-expander-container__button {
+	font-size: 1.6rem;
+	padding-bottom: 10px;
+	border-bottom: 1px solid $color-primary;
+	display: flex;
+	gap: 5px;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+	min-width: 250px;
+
+	&.active {
+		.data-expander-container__button-icon {
+			transform: rotate(45deg);
+		}
+	}
+
+	&:hover,
+	&:focus {
+		border-color: $color-black;
+	}
+}
+.data-expander-container__button-icon {
+	width: 12px;
+	height: 12px;
+}
+.data-expander-container__target {
+	position: absolute;
+	z-index: 3;
+	background: $color-invert;
+	border-radius: 8px;
+	padding: 10px;
+	width: 100%;
+	margin-top: 10px;
+
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 5px;
+	}
+	li:last-child {
+		button {
+			border-bottom: none;
+			padding-bottom: 0;
+		}
+	}
+	button {
+		padding-bottom: 5px;
+		border-bottom: 1px solid $color-black;
+		width: 100%;
+		text-align: left;
+
+		&:hover,
+		&:focus {
+			color: $color-primary;
+			border-color: $color-primary;
+		}
+	}
 }
