@@ -28,8 +28,29 @@ console.log('ho hey!');
                     toggleTarget.classList.add('active');
                     toggle.setAttribute("aria-expanded", "true");
                 }
+            }) 
+        })
+    }
+})();
+
+// modal  
+(function () {
+    const modalTogglers = [...document.querySelectorAll("[data-modal-toggle]")];
+
+    if (modalTogglers.length !== 0) {
+        modalTogglers.forEach(toggle => {
+            const toggleAttribute = toggle.getAttribute("data-modal-toggle");
+            const modalTarget = document.getElementById(toggleAttribute);
+            const modalCloseBtn = modalTarget.querySelector('[data-close-modal]')
+
+            toggle.addEventListener("click", e => {
+                modalTarget.showModal();
+            })
+
+            modalCloseBtn.addEventListener("click", e => {
+                modalTarget.close()
             })
 
         })
     }
-})(); 
+})();
