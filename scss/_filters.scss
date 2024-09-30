@@ -13,7 +13,7 @@
 
 	&:hover,
 	&:focus {
-		.product-filters__title span{
+		.product-filters__title span {
 			color: $color-primary;
 		}
 		.product-filters__title-icon,
@@ -51,4 +51,54 @@
 	padding: 20px;
 	border-radius: 8px;
 	background: $color-invert;
+}
+
+.product-filters-wrapper {
+	position: relative;
+}
+.product-filters-wrapper__input {
+	height: 40px;
+	width: 100%;
+	padding: 20px 100px 20px 20px;
+	border: none;
+	border-bottom: 1px solid $color-primary;
+	font-size: 1.6rem;
+	&::placeholder {
+		opacity: 1;
+	}
+}
+
+.product-filters__clear {
+	position: absolute;
+	right: 50px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 30px;
+	height: 100%;
+    display: none;
+
+    &.active {
+        display: block;
+    }
+	&:hover,
+	&:focus {
+		.product-filters__clear-icon {
+			fill: $color-black;
+		}
+	}
+}
+.product-filters__clear-icon {
+	width: 20px;
+	height: 20px;
+	transform: rotate(45deg);
+	fill: $color-primary;
+}
+.product-filters-wrapper__search-icon {
+	width: 20px;
+	height: 20px;
+	fill: $color-primary;
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
 }

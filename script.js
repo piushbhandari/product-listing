@@ -28,7 +28,7 @@ console.log('ho hey!');
                     toggleTarget.classList.add('active');
                     toggle.setAttribute("aria-expanded", "true");
                 }
-            }) 
+            })
         })
     }
 })();
@@ -50,7 +50,34 @@ console.log('ho hey!');
             modalCloseBtn.addEventListener("click", e => {
                 modalTarget.close()
             })
+        })
+    }
+})();
 
+// clear search input 
+(function () {
+    const inputcontainers = [...document.querySelectorAll('[data-input-container]')];
+
+    if (inputcontainers.length !== 0) {
+        inputcontainers.forEach(inputcontainer => {
+            const inputElement = inputcontainer.querySelector("[data-searcher]")
+            const clearBtn = inputcontainer.querySelector("[data-clear-btn]");
+
+            inputElement.addEventListener("input", e => {
+                const inputValue = e.target.value;
+                console.log(inputValue)
+                if (inputValue.length > 0) {
+                    clearBtn.classList.add('active')
+                }
+                else {
+                    clearBtn.classList.remove('active')
+                }
+            })
+
+            clearBtn.addEventListener("click", e => {
+                inputElement.value = "";
+                clearBtn.classList.remove('active')
+            })
         })
     }
 })();

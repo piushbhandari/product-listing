@@ -895,6 +895,55 @@ Base styles
   background: #fff;
 }
 
+.product-filters-wrapper {
+  position: relative;
+}
+
+.product-filters-wrapper__input {
+  height: 40px;
+  width: 100%;
+  padding: 20px 100px 20px 20px;
+  border: none;
+  border-bottom: 1px solid #C73B0F;
+  font-size: 1.6rem;
+}
+.product-filters-wrapper__input::placeholder {
+  opacity: 1;
+}
+
+.product-filters__clear {
+  position: absolute;
+  right: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 100%;
+  display: none;
+}
+.product-filters__clear.active {
+  display: block;
+}
+.product-filters__clear:hover .product-filters__clear-icon, .product-filters__clear:focus .product-filters__clear-icon {
+  fill: #000;
+}
+
+.product-filters__clear-icon {
+  width: 20px;
+  height: 20px;
+  transform: rotate(45deg);
+  fill: #C73B0F;
+}
+
+.product-filters-wrapper__search-icon {
+  width: 20px;
+  height: 20px;
+  fill: #C73B0F;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .pagination {
   margin: 0;
   padding: 0;
