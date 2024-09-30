@@ -101,6 +101,7 @@ input {
   font: inherit;
   font-family: "Red Hat Text", sans-serif;
   color: #260F08;
+  transition: all 0.2s ease-in;
 }
 
 /*
@@ -227,8 +228,8 @@ button {
 }
 
 a,
-button {
-  transition: var(--transition1);
+button, svg {
+  transition: all 0.2s ease-in;
 }
 
 a {
@@ -246,6 +247,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .semibold {
   font-weight: 600;
+}
+
+[data-expander-target] {
+  display: none;
+}
+[data-expander-target].active {
+  display: block;
 }
 
 /* ================================================================
@@ -329,9 +337,6 @@ Base styles
   }
 }
 
-.section-filters {
-  outline: 1px solid red;
-}
 @media (min-width: 75em) {
   .section-filters {
     grid-column: 1/-1;
@@ -357,10 +362,10 @@ Base styles
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
   border-radius: 999px;
   background: #C73B0F;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
   padding: 16px;
   display: inline-flex;
   color: #fff;
@@ -458,7 +463,7 @@ Base styles
 .lazy-img {
   opacity: 0;
   transform: translateY(-5rem) scale(0.5);
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .unlazied {
@@ -597,6 +602,13 @@ Base styles
   line-height: normal;
 }
 
+.product-listing__link {
+  text-decoration: none;
+}
+.product-listing__link:hover, .product-listing__link:focus {
+  text-decoration: underline;
+}
+
 .product-listing__product-name {
   margin-bottom: 4px;
   font-size: 1.6rem;
@@ -618,6 +630,30 @@ Base styles
   padding: 24px;
   position: sticky;
   top: 10px;
+}
+.cart-summary.active .cart-summary__empty {
+  display: none;
+}
+.cart-summary.active .cart-summary__with-items {
+  display: block;
+}
+
+.cart-summary__empty {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.cart-summary__empty {
+  color: #87635A;
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+.cart-summary__with-items {
+  display: none;
 }
 
 .cart-summary__title,
@@ -693,7 +729,7 @@ Base styles
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: all 0.3s ease-in;
+  transition: all 0.2s ease-in;
   width: 19px;
   height: 19px;
   border-radius: 50%;
@@ -703,10 +739,10 @@ Base styles
   justify-content: center;
 }
 .order-listing__close:hover, .order-listing__close:focus {
-  border-color: #C73B0F;
+  border-color: #000;
 }
 .order-listing__close:hover .order-listing__close-icon, .order-listing__close:focus .order-listing__close-icon {
-  fill: #C73B0F;
+  fill: #000;
 }
 
 .order-listing__close-icon {
@@ -752,6 +788,89 @@ Base styles
 .cart-summary__notice-text {
   margin: 0;
   font-size: 1.4rem;
+}
+
+.product-filters__button {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+.product-filters__button:hover .product-filters__title span, .product-filters__button:focus .product-filters__title span {
+  color: #C73B0F;
+}
+.product-filters__button:hover .product-filters__title-icon,
+.product-filters__button:hover .product-filters__button-icon, .product-filters__button:focus .product-filters__title-icon,
+.product-filters__button:focus .product-filters__button-icon {
+  fill: #C73B0F;
+}
+.product-filters__button.active .product-filters__button-icon {
+  transform: rotate(45deg);
+}
+
+.product-filters__title {
+  margin-bottom: 0;
+  font-size: 4rem;
+  line-height: 120%;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.product-filters__title-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.product-filters__button-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.product-filters__content {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.pagination {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: c enter;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.pagination__button:hover, .pagination__button:focus, .pagination__button.active {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.25) 100%), #C73B0F;
+  color: #fff;
+}
+
+.pagination__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  font-size: 1.6rem;
+}
+.pagination__button--icon {
+  background: #C73B0F;
+}
+.pagination__icon {
+  width: 16px;
+  height: 16px;
+  fill: #fff;
 }
 
 /*# sourceMappingURL=main.css.map */

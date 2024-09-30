@@ -83,8 +83,7 @@ Base styles
 	}
 }
 
-.section-filters {
-	outline: 1px solid red;
+.section-filters { 
 	@include breakpoint($bp-l) {
 		grid-column: 1 / -1;
 	}

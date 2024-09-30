@@ -26,6 +26,7 @@
 	font: inherit;
 	font-family: $font-primary;
 	color: $color-base;
+	transition: $trans;
 }
 /*
     3. Allow percentage-based heights in the application
@@ -142,8 +143,8 @@ button {
 }
 
 a,
-button {
-	transition: var(--transition1);
+button, svg {
+	transition: $trans;
 }
 a {
 	text-decoration: underline;

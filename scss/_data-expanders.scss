@@ -1,0 +1,7 @@
+[data-expander-target]
+{
+    display: none;
+    &.active {
+        display: block;
+    }
+}
